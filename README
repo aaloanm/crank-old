@@ -1,0 +1,8 @@
+blaCk |
+------+
+
+Conventions |
+------------+
+* All m4 utility files should be placed in m4/
+* Files that are to be generated should be placed in their respective paths
+* Coding/documentation convention: https://www.kernel.org/doc/Documentation/kernel-doc-nano-HOWTO.txt
