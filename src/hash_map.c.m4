@@ -4,8 +4,8 @@ include(`hash_map.m4')
 #include <stdlib.h>
 #include <string.h>
 
-`#include '"blaCk/hash_map.h"
-#include "blaCk/compiler.h"
+`#include '"crank/hash_map.h"
+#include "crank/compiler.h"
 #include "primes.h"
 #include "config.h"
 

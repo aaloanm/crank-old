@@ -1,0 +1,7 @@
+#ifndef _CRANK_CONFIG_H_
+#define _CRANK_CONFIG_H_ 1
+
+#define CRANK_VERSION_MAJOR @crank_VERSION_MAJOR@
+#define CRANK_VERSION_MINOR @crank_VERSION_MINOR@
+
+#endif /* _CRANK_CONFIG_H_ */

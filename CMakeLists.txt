@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
-project(blaCk)
-set(blaCk_VERSION_MAJOR 0)
-set(blaCk_VERSION_MINOR 1)
+project(crank)
+set(crank_VERSION_MAJOR 0)
+set(crank_VERSION_MINOR 1)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
@@ -23,8 +23,8 @@ set(CMAKE_EXTRA_INCLUDE_FILES)
 # configure files
 configure_file("${PROJECT_SOURCE_DIR}/src/config.h.in"
 	"${PROJECT_BINARY_DIR}/src/config.h")
-configure_file("${PROJECT_SOURCE_DIR}/include/blaCk/config.h.in"
-	"${PROJECT_BINARY_DIR}/include/blaCk/config.h")
+configure_file("${PROJECT_SOURCE_DIR}/include/crank/config.h.in"
+	"${PROJECT_BINARY_DIR}/include/crank/config.h")
 
 # add include directories
 include_directories("${PROJECT_BINARY_DIR}/include"
@@ -36,14 +36,14 @@ include_directories("${PROJECT_BINARY_DIR}/include"
 option(DISABLE_HASH_MAPS "Do not build hash maps" OFF)
 if(NOT DISABLE_HASH_MAPS)
 	m4gen_src_header(2 "void *:p;char *:s;uint32_t:i;uint64_t:l"
-		src/hash_map.c.m4 include/blaCk/hash_map.h.m4 srcs headers)
-	add_library(blaCk-hash "src/primes.c" ${srcs})
-	install(FILES ${headers} DESTINATION include/blaCk/)
-	install(TARGETS blaCk-hash
+		src/hash_map.c.m4 include/crank/hash_map.h.m4 srcs headers)
+	add_library(crank-hash "src/primes.c" ${srcs})
+	install(FILES ${headers} DESTINATION include/crank/)
+	install(TARGETS crank-hash
 		LIBRARY DESTINATION lib
 		ARCHIVE DESTINATION lib)
 endif()
 
-install(FILES "${PROJECT_BINARY_DIR}/include/blaCk/config.h"
-	"${PROJECT_SOURCE_DIR}/include/blaCk/compiler.h"
-	DESTINATION include/blaCk/)
+install(FILES "${PROJECT_BINARY_DIR}/include/crank/config.h"
+	"${PROJECT_SOURCE_DIR}/include/crank/compiler.h"
+	DESTINATION include/crank/)
